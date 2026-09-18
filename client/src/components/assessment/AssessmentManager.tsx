@@ -5,10 +5,11 @@ import { createAssessmentApi, createSelfEvaluationApi, createPeerReviewApi } fro
 interface AssessmentManagerProps {
   token: string;
   studentId: string;
+  initialTab?: 'ASSESSMENT' | 'SELF_EVAL' | 'PEER_REVIEW';
 }
 
-export const AssessmentManager: React.FC<AssessmentManagerProps> = ({ token, studentId }) => {
-  const [activeTab, setActiveTab] = useState<'ASSESSMENT' | 'SELF_EVAL' | 'PEER_REVIEW'>('ASSESSMENT');
+export const AssessmentManager: React.FC<AssessmentManagerProps> = ({ token, studentId, initialTab = 'ASSESSMENT' }) => {
+  const [activeTab, setActiveTab] = useState<'ASSESSMENT' | 'SELF_EVAL' | 'PEER_REVIEW'>(initialTab);
 
   // Assessment Form State
   const [title, setTitle] = useState('');

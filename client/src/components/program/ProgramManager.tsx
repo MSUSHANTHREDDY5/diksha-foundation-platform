@@ -18,10 +18,11 @@ import {
 interface ProgramManagerProps {
   token?: string;
   studentId?: string;
+  initialTab?: 'PROGRAMS' | 'ENROLLMENT' | 'ACTIVITIES' | 'TASKS';
 }
 
-export const ProgramManager: React.FC<ProgramManagerProps> = ({ token = '', studentId = '' }) => {
-  const [activeTab, setActiveTab] = useState<'PROGRAMS' | 'ENROLLMENT' | 'ACTIVITIES' | 'TASKS'>('PROGRAMS');
+export const ProgramManager: React.FC<ProgramManagerProps> = ({ token = '', studentId = '', initialTab = 'PROGRAMS' }) => {
+  const [activeTab, setActiveTab] = useState<'PROGRAMS' | 'ENROLLMENT' | 'ACTIVITIES' | 'TASKS'>(initialTab);
 
   // Program Form State
   const [programTitle, setProgramTitle] = useState('');

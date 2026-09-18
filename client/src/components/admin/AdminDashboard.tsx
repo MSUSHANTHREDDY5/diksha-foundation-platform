@@ -18,10 +18,11 @@ import {
 
 interface AdminDashboardProps {
   token?: string;
+  initialTab?: 'DASHBOARD' | 'STUDENT_ANALYTICS' | 'PROGRAM_ANALYTICS' | 'REPORTS';
 }
 
-export const AdminDashboard: React.FC<AdminDashboardProps> = ({ token = '' }) => {
-  const [activeTab, setActiveTab] = useState<'DASHBOARD' | 'STUDENT_ANALYTICS' | 'PROGRAM_ANALYTICS' | 'REPORTS'>('DASHBOARD');
+export const AdminDashboard: React.FC<AdminDashboardProps> = ({ token = '', initialTab = 'DASHBOARD' }) => {
+  const [activeTab, setActiveTab] = useState<'DASHBOARD' | 'STUDENT_ANALYTICS' | 'PROGRAM_ANALYTICS' | 'REPORTS'>(initialTab);
 
   // Filters
   const [centreFilter, setCentreFilter] = useState('');
