@@ -5,6 +5,7 @@ import { connectDB } from './config/db.js';
 import healthRoutes from './routes/health.routes.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import studentRoutes from './modules/student/student.routes.js';
+import assessmentRoutes from './modules/assessment/assessment.routes.js';
 import { errorHandler } from './middleware/error.middleware.js';
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/students', studentRoutes);
+app.use('/api', assessmentRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
