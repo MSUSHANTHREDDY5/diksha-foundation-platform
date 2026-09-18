@@ -8,6 +8,7 @@ import studentRoutes from './modules/student/student.routes.js';
 import assessmentRoutes from './modules/assessment/assessment.routes.js';
 import programRoutes from './modules/program/program.routes.js';
 import taskRoutes from './modules/task/task.routes.js';
+import adminRoutes from './modules/admin/admin.routes.js';
 import { errorHandler } from './middleware/error.middleware.js';
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use('/api/students', studentRoutes);
 app.use('/api', assessmentRoutes);
 app.use('/api', programRoutes);
 app.use('/api', taskRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
